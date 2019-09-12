@@ -35,13 +35,13 @@ Get started with ForgeRock Access Management for YubiKeys:
 * [WebAuthn Authentication Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-auth)
 * [WebAuthn Registration Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-auth)
 
-### Building strong single-factor authentication
+### Building YubiKey strong single-factor authentication
 
 
-### Building two-factor (2FA) authentication
+### Building YubiKey two-factor (2FA) authentication
 
 
-### Building multi-factor authentication (MFA)
+### Building YubiKey multi-factor authentication (MFA)
 
 
 ## Disclaimer
