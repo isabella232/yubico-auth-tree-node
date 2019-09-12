@@ -15,9 +15,7 @@ YubiKey 5C Nano
 Security Key
 Security Key NFC
 
-## ForgeRock Integration
-
-### WebAuthn
+## ForgeRock WebAuthn Integration
 
 ForgeRock Access Management supports WebAuthn, enabling FIDO2 hardware devices, such as the YubiKey, for strong authentication.
 
@@ -33,9 +31,19 @@ The joint ForgeRock and YubiKey solution also enables expanded use cases, allowi
 
 Get started with ForgeRock Access Management for YubiKeys:
 
-* Creating Trees for Web Authentication (WebAuthn)
-* WebAuthn Authentication Node
-* WebAuthn Registration Node
+* [Creating Trees for Web Authentication (WebAuthn)](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#authn-mfa-web-authn)
+* [WebAuthn Authentication Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-auth)
+* [WebAuthn Registration Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-auth)
+
+### Building strong single-factor authentication
+
+
+### Building two-factor (2FA) authentication
+
+
+### Building multi-factor authentication (MFA)
+
 
 ## Disclaimer
+
 All implied conditions, representations and warranties, including any implied warranty of merchantability, fitness for a particular cause, non-infringement and title with regard to any Yubico product or service, including but not limited to YubiKeys, are disclaimed. In no event does Yubico warrant that the product or service is error free, will operate properly or at all in all computer environments and configurations, or that you will be able to operate the product or service without problems or interruptions. Yubico does not warrant that the product or service or any equipment, system or network on which the product or service is used will be free of vulnerability to intrusion or attack.
