@@ -8,13 +8,8 @@ Yubico is a leading contributor to the FIDO2, WebAuthn, and FIDO Universal 2nd F
 
 ## Prerequisites - Supported YubiKeys
 
-* YubiKey 5 NFC
-* YubiKey 5C
-* YubiKey 5Ci
-* YubiKey 5 Nano
-* YubiKey 5C Nano
-* Security Key
-* Security Key NFC
+* YubiKey 5 series
+* Security Key series
 
 ## ForgeRock WebAuthn Integration
 
