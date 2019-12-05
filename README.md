@@ -58,7 +58,7 @@ We will use the following components:
 
 ### WebAuthn Authentication Node - 2FA
 
-The WebAuthn Authentication node allows users of supported clients to use a registered FIDO device during authentication.
+The WebAuthn Authentication node allows users of supported clients to use a registered FIDO2 device during authentication.
 
 *Node Mappings:*
 
@@ -79,7 +79,7 @@ Reference [WebAuthn Authentication Node](https://backstage.forgerock.com/docs/am
 
 Present a message to the user if they do not have a YubiKey registered. If they want to register a YubiKey go to a WebAuthn Registration Node, else go back to collecting username and password. 
 
-Note: This was put in as a quick user experience fix for this guide, more complex logic could be used.
+*Note:* This was put in as a quick user experience fix for this guide, more complex logic could be used.
 
 *Node Mappings:*
 
@@ -96,14 +96,14 @@ Note: This was put in as a quick user experience fix for this guide, more comple
   * Key: EN_US
   * Value: Register a YubiKey
 * Negative Answer
-  * Key: En_US
+  * Key: EN_US
   * Value: Do not register a YubiKey
 
 Reference [Message Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-message)
 
 ### WebAuthn Registration Node - 2FA
 
-The WebAuthn Registration authentication node allows users of supported clients to register FIDO devices for use during authentication.
+The WebAuthn Registration authentication node allows users of supported clients to register FIDO2 devices for use during authentication.
 
 *Node Mappings:*
 
@@ -116,7 +116,7 @@ The WebAuthn Registration authentication node allows users of supported clients 
 *Node Settings:*
 
 * User verification requirement: set to DISCOURAGED. This will disable the PIN prompt for WebAuthn. If this was set to PREFERRED or REQUIRED the user will be prompted to enter a PIN before proceeding, this would turn the flow into multi-factor authentication.
-* Authentication attachment: set to CROSS_PLATFORM. This will instruct the browser to prompt for a YubiKey. If it is set to UNSPECIFIED the user may be prompted for a platform authenticator such as Windows Hello on a Windows 10 device. If not set correctly this may cause the user to not register a YubiKey.
+* Authentication attachment: set to CROSS_PLATFORM. This will instruct the browser to prompt for a YubiKey. If it is set to UNSPECIFIED the user may be prompted for a platform authenticator such as Windows Hello on a Windows 10 device. If not set correctly this may cause the user to unintentionally register a platform authenticator when they thought they were registering a YubiKey.
 * Limit registration: set to enabled. This helps the user experience by only being able to register a YubiKey once. If not enabled a user may think they are registering a backup YubiKey, which is a best practice, when they are really registering the same YubiKey again.
 
 Reference [WebAuthn Registration Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-registration)
@@ -129,7 +129,7 @@ Walk through the authentication to see it in action!
 
 ## Building YubiKey multi-factor authentication (MFA)
 
-This authentication tree will only prompt for a username then prompt for a YubiKey with and PIN. If the user does not have  YubiKey registered then it will allow them to self-register a YubiKey.
+This authentication tree will only prompt for a username then prompt for a YubiKey with a PIN. If the user does not have  YubiKey registered then it will allow them to self-register a YubiKey.
 
 This guide will highlight the specific settings to quickly support YubiKeys for authentication. As this is a quick guide that focuses on the happy path it does not account for robust error handling which would need to be added for a production environment.
 
@@ -151,7 +151,7 @@ We will use the following components:
 
 ### WebAuthn Authentication Node - MFA
 
-The WebAuthn Authentication node allows users of supported clients to use a registered FIDO device during authentication.
+The WebAuthn Authentication node allows users of supported clients to use a registered FIDO2 device during authentication.
 
 *Node Mappings:*
 
@@ -189,14 +189,14 @@ Note: This was put in as a quick user experience fix for this guide, more comple
   * Key: EN_US
   * Value: Register a YubiKey
 * Negative Answer
-  * Key: En_US
+  * Key: EN_US
   * Value: Do not register a YubiKey
 
 Reference [Message Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-message)
 
 ### WebAuthn Registration Node - MFA
 
-The WebAuthn Registration authentication node allows users of supported clients to register FIDO devices for use during authentication.
+The WebAuthn Registration authentication node allows users of supported clients to register FIDO2 devices for use during authentication.
 
 *Node Mappings:*
 
@@ -209,7 +209,7 @@ The WebAuthn Registration authentication node allows users of supported clients 
 *Node Settings:*
 
 * User verification requirement: set to REQUIRED. This will enforce the PIN prompt for WebAuthn. If this is set to PREFERRED or DISCOURAGED the user may not be prompted to enter a PIN before proceeding, this would make the flow not  multi-factor authentication.
-* Authentication attachment: set to CROSS_PLATFORM. This will instruct the browser to prompt for a YubiKey. If it is set to UNSPECIFIED the user may be prompted for a platform authenticator such as Windows Hello on a Windows 10 device. If not set correctly this may cause the user to not register a YubiKey.
+* Authentication attachment: set to CROSS_PLATFORM. This will instruct the browser to prompt for a YubiKey. If it is set to UNSPECIFIED the user may be prompted for a platform authenticator such as Windows Hello on a Windows 10 device. If not set correctly this may cause the user to unintentionally register a platform authenticator when they thought they were registering a YubiKey.
 * Limit registration: set to enabled. This helps the user experience by only being able to register a YubiKey once. If not enabled a user may think they are registering a backup YubiKey, which is a best practice, when they are really registering the same YubiKey again.
 
 Reference [WebAuthn Registration Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-webauthn-registration)
@@ -247,7 +247,7 @@ Present a message to the user asking if they would like to register another Yubi
   * Key: EN_US
   * Value: Yes
 * Negative Answer
-  * Key: En_US
+  * Key: EN_US
   * Value: No
 
 Reference [Message Node](https://backstage.forgerock.com/docs/am/6.5/authentication-guide/#auth-node-message)
@@ -261,7 +261,7 @@ Once logged in a YubiKey can be renamed or removed on the following screen:
 1. After successfully signing in click on the user profile button on the top of the screen.
 1. Click self-service in the drop-down
 1. Click Dashboard in the top navigation
-1. All the registered YubiKeys will be displayed din the 1. Authentication Devices section
+1. All the registered YubiKeys will be displayed in the Authentication Devices section
 1. To edit a YubiKey click the three dots on the item to get a drop-down menu.
     * To rename the YubiKey select Settings.
     * To remove the YubiKey select Delete.
