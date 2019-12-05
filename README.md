@@ -17,9 +17,9 @@ ForgeRock Access Management supports WebAuthn, enabling FIDO2 hardware devices, 
 
 WebAuthn also offers users greater choice for authentication, including:
 
-* Strong single-factor (passwordless)
-* Two-factor (2FA)
-* Multi-factor authentication (MFA)
+* Strong single-factor (YubiKey)
+* Two-factor (Password + YubiKey)
+* Multi-factor authentication (YubiKey + PIN or Biometric)
 
 With FIDO2 and WebAuthn, ForgeRock Access Management and the YubiKey can replace a username and password with a much stronger form of single factor authentication. FIDO2 and WebAuthn use public-key cryptography and origin  bound key validation instead of passwords or weaker forms of authentication like SMS. The cryptographic security model eliminates the risks of account takeovers from phishing, and all forms of password theft and replay attacks. 
 
